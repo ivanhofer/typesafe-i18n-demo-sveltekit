@@ -17,6 +17,11 @@ export type Translation = {
 	 * @param {number} year
 	 */
 	'HI': RequiredParams1<'year'>
+	/**
+	 * {0} live spectator{{s}}
+	 * @param {string | number | boolean} 0
+	 */
+	'spectators': RequiredParams1<'0'>
 }
 
 export type TranslationFunctions = {
@@ -24,6 +29,10 @@ export type TranslationFunctions = {
 	 * Welcome to Svelte Fall Summit {year}
 	 */
 	'HI': (arg: { year: number }) => LocalizedString
+	/**
+	 * {0} live spectator{{s}}
+	 */
+	'spectators': (arg0: string | number | boolean) => LocalizedString
 }
 
 export type Formatters = {}
