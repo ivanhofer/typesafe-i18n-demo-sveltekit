@@ -22,6 +22,13 @@ export type Translation = {
 	 * @param {string | number | boolean} 0
 	 */
 	'spectators': RequiredParams1<'0'>
+	'summit': {	
+		/**
+		 * {0|simpleDate}
+		 * @param {Date} 0
+		 */
+		'schedule': RequiredParams1<'0|simpleDate'>
+	}
 }
 
 export type TranslationFunctions = {
@@ -33,9 +40,17 @@ export type TranslationFunctions = {
 	 * {0} live spectator{{s}}
 	 */
 	'spectators': (arg0: string | number | boolean) => LocalizedString
+	'summit': {	
+		/**
+		 * {0|simpleDate}
+		 */
+		'schedule': (arg0: Date) => LocalizedString
+	}
 }
 
-export type Formatters = {}
+export type Formatters = {
+	'simpleDate': (value: Date) => unknown
+}
 
 type Param<P extends string> = `{${P}}`
 

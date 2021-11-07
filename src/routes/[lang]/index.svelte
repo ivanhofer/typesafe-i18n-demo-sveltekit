@@ -18,11 +18,17 @@
 			spectators = 0
 		}
 	}
+
+	const day = new Date('2021-11-20')
 </script>
 
 <h2>
 	{$LL.HI({ year: 2021 })}
 </h2>
+
+<h3>
+	{$LL.summit.schedule(day)}
+</h3>
 
 <div class="spectators">
 	{$LL.spectators(spectators)}
