@@ -3,5 +3,5 @@
 </script>
 
 <h2>
-	{$LL.HI()}
+	{$LL.HI({ year: 2021 })}
 </h2>
