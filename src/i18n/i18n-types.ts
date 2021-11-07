@@ -9,6 +9,7 @@ export type BaseLocale = 'en'
 export type Locales =
 	| 'de'
 	| 'en'
+	| 'it'
 
 export type Translation = {
 	/**
