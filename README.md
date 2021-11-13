@@ -16,6 +16,15 @@ It is a basic example and shows:
  - plural rules
  - locale specific date-formatting
 
+What is missing:
+ - opinion how to localize slugs\
+   this highly depends where your data comes from. This will probably differ from project to project.
+ - cross-links between your language slugs\
+   like mentioned above, this will differ from project to project. You can find useful resources here:\
+    - [`rel="alternate"` links](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel#attr-alternate)
+    - [`hreflang` attribute](https://developer.mozilla.org/de/docs/Web/HTML/Element/a#attr-hreflang)
+    - [SEO optimized examples](https://developers.google.com/search/docs/advanced/crawling/localized-versions)
+
 
 ## add `typesafe-i18n` to an existing SvelteKit project
 
