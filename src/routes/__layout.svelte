@@ -4,9 +4,15 @@
 	import type { Locales } from '$i18n/i18n-types'
 	import { replaceLocaleInUrl } from '../utils'
 	import { baseLocale, locales } from '$i18n/i18n-util'
+	import type { SessionPayload } from '../hooks'
 
-	export const load: Load = async ({ page, session }) => {
-		const lang = page.params.lang as Locales
+	type LoadInput = {
+		pageParams: { lang: Locales }
+		session: SessionPayload
+	}
+
+	export const load: Load<LoadInput> = async ({ url, session, params }) => {
+		const lang = params.lang
 
 		// redirect to preferred language if user comes from page root
 		if (!lang) {
@@ -20,7 +26,7 @@
 		if (!locales.includes(lang)) {
 			return {
 				status: 302,
-				redirect: replaceLocaleInUrl(page.path, baseLocale),
+				redirect: replaceLocaleInUrl(url.pathname, baseLocale),
 			}
 		}
 
