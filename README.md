@@ -1,5 +1,7 @@
 # typesafe-i18n demo sveltekit
 
+**Here is a [video](https://www.youtube.com/watch?v=C6O5pMMMTG0) for better context**
+
 This example demonstrates a [`typesafe-i18n`](https://github.com/ivanhofer/typesafe-i18n)-integration with [SvelteKit](https://kit.svelte.dev/).
 
 ### LIVE-DEMO: https://typesafe-i18n-demo-sveltekit.vercel.app
