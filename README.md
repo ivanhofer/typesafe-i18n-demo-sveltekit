@@ -30,7 +30,7 @@ What is missing:
 
 ## add `typesafe-i18n` to an existing SvelteKit project
 
-If you want to implement the solution in a existing project, you can take a look at the [commit history](https://github.com/ivanhofer/typesafe-i18n-demo-sveltekit/commits/master) to see a step-by-step guide.
+If you want to implement the solution in a existing project, you can take a look at the [commit history](https://github.com/ivanhofer/typesafe-i18n-demo-sveltekit/commits/main) to see a step-by-step guide.
 
 
 ## JavaScript version
