@@ -24,8 +24,13 @@
 
 <ul>
 	{#each locales as l}
-		<li role="button" class:active={l === $locale} on:click={() => switchLocale(l)}>
-			{l}
-		</li>
+        <li>
+            <button type="button" class:active={l === $locale} on:click={() => {
+                switchLocale(l)
+		    	document.querySelector('html').setAttribute('lang', l)
+            }}>
+                {l}
+            </button>
+        </li>
 	{/each}
 </ul>
