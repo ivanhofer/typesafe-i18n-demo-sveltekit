@@ -11,6 +11,9 @@
 
 		// update url to reflect locale changes
 		history.pushState({ locale }, '', replaceLocaleInUrl(location.pathname, locale))
+
+		// update `lang` attribute
+		document.querySelector('html').setAttribute('lang', locale)
 	}
 
 	// update locale when navigating via browser back/forward buttons
@@ -24,13 +27,10 @@
 
 <ul>
 	{#each locales as l}
-        <li>
-            <button type="button" class:active={l === $locale} on:click={() => {
-                switchLocale(l)
-		    	document.querySelector('html').setAttribute('lang', l)
-            }}>
-                {l}
-            </button>
-        </li>
+		<li>
+			<button type="button" class:active={l === $locale} on:click={() => switchLocale(l)}>
+				{l}
+			</button>
+		</li>
 	{/each}
 </ul>
