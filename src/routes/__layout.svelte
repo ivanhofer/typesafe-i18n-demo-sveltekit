@@ -1,10 +1,10 @@
 <script context="module" lang="ts">
-	import { initI18n } from '$i18n/i18n-svelte'
 	import type { Load } from '@sveltejs/kit'
 	import type { Locales } from '$i18n/i18n-types'
 	import { replaceLocaleInUrl } from '../utils'
 	import { baseLocale, locales } from '$i18n/i18n-util'
 	import type { SessionPayload } from '../hooks'
+	import { loadLocaleAsync } from '$i18n/i18n-util.async'
 
 	type LoadInput = {
 		pageParams: { lang: Locales }
@@ -33,14 +33,18 @@
 		// delete session locale since we don't need it to be sent to the client
 		delete session.locale
 
-		await initI18n(lang)
+		await loadLocaleAsync(lang)
 
-		return {}
+		return { props: { locale: lang } }
 	}
 </script>
 
 <script lang="ts">
 	import Header from '$lib/Header.svelte'
+	import { setLocale } from '$i18n/i18n-svelte'
+
+	export let locale: Locales
+	setLocale(locale)
 </script>
 
 <Header />

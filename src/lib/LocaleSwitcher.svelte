@@ -3,11 +3,15 @@
 	import { setLocale, locale } from '$i18n/i18n-svelte'
 	import type { Locales } from '$i18n/i18n-types'
 	import { locales } from '$i18n/i18n-util'
+	import { loadLocaleAsync } from '$i18n/i18n-util.async'
 	import { replaceLocaleInUrl } from '../utils'
 
 	const switchLocale = async (locale: Locales) => {
-		// update store => loads new dictionary from server
-		await setLocale(locale)
+		// load new dictionary from server
+		await loadLocaleAsync(locale)
+
+		// select locale
+		setLocale(locale)
 
 		// update url to reflect locale changes
 		history.pushState({ locale }, '', replaceLocaleInUrl(location.pathname, locale))
