@@ -7,12 +7,13 @@
 	import { loadLocaleAsync } from '$i18n/i18n-util.async'
 
 	type LoadInput = {
-		pageParams: { lang: Locales }
+		pageParams: { lang?: Locales }
 		session: SessionPayload
 	}
 
 	export const load: Load<LoadInput> = async ({ url, session, params }) => {
-		const lang = params.lang
+		// fallback needed because of https://github.com/sveltejs/kit/issues/3647
+		const lang = params.lang || (url.pathname.split('/')[1] as Locales)
 
 		// redirect to preferred language if user comes from page root
 		if (!lang) {
