@@ -6,25 +6,29 @@
 	import { loadLocaleAsync } from '$i18n/i18n-util.async'
 	import { replaceLocaleInUrl } from '../utils'
 
-	const switchLocale = async (locale: Locales) => {
+	const switchLocale = async (newLocale: Locales, updateHistoryState = true) => {
+		if (!newLocale || $locale === newLocale) return
+
 		// load new dictionary from server
-		await loadLocaleAsync(locale)
+		await loadLocaleAsync(newLocale)
 
 		// select locale
-		setLocale(locale)
-
-		// update url to reflect locale changes
-		history.pushState({ locale }, '', replaceLocaleInUrl(location.pathname, locale))
+		setLocale(newLocale)
 
 		// update `lang` attribute
-		document.querySelector('html').setAttribute('lang', locale)
+		document.querySelector('html').setAttribute('lang', newLocale)
+
+		if (updateHistoryState) {
+			// update url to reflect locale changes
+			history.pushState({ locale: newLocale }, '', replaceLocaleInUrl(location.pathname, newLocale))
+		}
 	}
 
 	// update locale when navigating via browser back/forward buttons
-	const handlePopStateEvent = async ({ state }: PopStateEvent) => state.locale && (await setLocale(state.locale))
+	const handlePopStateEvent = async ({ state }: PopStateEvent) => switchLocale(state.locale, false)
 
 	// update locale when page store changes
-	$: setLocale($page.params.lang as Locales)
+	$: switchLocale($page.params.lang as Locales, false)
 </script>
 
 <svelte:window on:popstate={handlePopStateEvent} />
