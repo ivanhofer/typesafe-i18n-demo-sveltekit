@@ -3,15 +3,13 @@
 	import type { Locales } from '$i18n/i18n-types'
 	import { replaceLocaleInUrl } from '../utils'
 	import { baseLocale, locales } from '$i18n/i18n-util'
-	import type { SessionPayload } from '../hooks'
 	import { loadLocaleAsync } from '$i18n/i18n-util.async'
 
-	type LoadInput = {
-		pageParams: { lang?: Locales }
-		session: SessionPayload
+	type LoadParams = {
+		lang?: Locales
 	}
 
-	export const load: Load<LoadInput> = async ({ url, session, params }) => {
+	export const load: Load<LoadParams> = async ({ url, session, params }) => {
 		// fallback needed because of https://github.com/sveltejs/kit/issues/3647
 		const lang = params.lang || (url.pathname.split('/')[1] as Locales)
 
