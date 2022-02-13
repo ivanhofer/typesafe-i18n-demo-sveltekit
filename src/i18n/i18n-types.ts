@@ -10,23 +10,27 @@ export type Locales =
 	| 'en'
 	| 'it'
 
-export type Translation = {
+export type Translation = RootTranslation
+
+export type Translations = RootTranslation
+
+type RootTranslation = {
 	/**
 	 * Welcome to Svelte Fall Summit {year}
 	 * @param {number} year
 	 */
-	'HI': RequiredParams1<'year'>
+	HI: RequiredParams1<'year'>
 	/**
 	 * {0} live spectator{{s}}
 	 * @param {string | number | boolean} 0
 	 */
-	'spectators': RequiredParams1<'0'>
-	'summit': {	
+	spectators: RequiredParams1<'0'>
+	summit: {
 		/**
 		 * {0|simpleDate}
 		 * @param {Date} 0
 		 */
-		'schedule': RequiredParams1<'0|simpleDate'>
+		schedule: RequiredParams1<'0|simpleDate'>
 	}
 }
 
@@ -34,21 +38,21 @@ export type TranslationFunctions = {
 	/**
 	 * Welcome to Svelte Fall Summit {year}
 	 */
-	'HI': (arg: { year: number }) => LocalizedString
+	HI: (arg: { year: number }) => LocalizedString
 	/**
 	 * {0} live spectator{{s}}
 	 */
-	'spectators': (arg0: string | number | boolean) => LocalizedString
-	'summit': {	
+	spectators: (arg0: string | number | boolean) => LocalizedString
+	summit: {
 		/**
 		 * {0|simpleDate}
 		 */
-		'schedule': (arg0: Date) => LocalizedString
+		schedule: (arg0: Date) => LocalizedString
 	}
 }
 
 export type Formatters = {
-	'simpleDate': (value: Date) => unknown
+	simpleDate: (value: Date) => unknown
 }
 
 type Param<P extends string> = `{${P}}`
