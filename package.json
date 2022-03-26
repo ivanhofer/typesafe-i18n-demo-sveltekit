@@ -22,25 +22,25 @@
 	},
 	"type": "module",
 	"devDependencies": {
-		"@sveltejs/adapter-vercel": "1.0.0-next.43",
-		"@sveltejs/kit": "1.0.0-next.267",
-		"@typescript-eslint/eslint-plugin": "^5.11.0",
-		"@typescript-eslint/parser": "^5.11.0",
-		"eslint": "^8.9.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-svelte3": "^3.4.0",
+		"@sveltejs/adapter-vercel": "1.0.0-next.47",
+		"@sveltejs/kit": "1.0.0-next.303",
+		"@typescript-eslint/eslint-plugin": "^5.16.0",
+		"@typescript-eslint/parser": "^5.16.0",
+		"eslint": "^8.12.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte3": "^3.4.1",
 		"node-sass": "^7.0.1",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^2.5.1",
+		"prettier": "^2.6.1",
 		"prettier-plugin-svelte": "^2.6.0",
-		"sass": "^1.49.7",
+		"sass": "^1.49.9",
 		"svelte": "^3.46.4",
-		"svelte-check": "^2.4.3",
-		"svelte-preprocess": "^4.10.3",
+		"svelte-check": "^2.4.6",
+		"svelte-preprocess": "^4.10.4",
 		"tslib": "^2.3.1",
-		"typescript": "^4.5.5"
+		"typescript": "^4.6.3"
 	},
 	"dependencies": {
-		"typesafe-i18n": "^4.1.1"
+		"typesafe-i18n": "^5.1.0"
 	}
 }
