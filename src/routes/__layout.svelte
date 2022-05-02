@@ -10,8 +10,7 @@
 	}
 
 	export const load: Load<LoadParams> = async ({ url, session, params }) => {
-		// fallback needed because of https://github.com/sveltejs/kit/issues/3647
-		const lang = params.lang || (url.pathname.split('/')[1] as Locales)
+		const lang = params.lang
 
 		// redirect to preferred language if user comes from page root
 		if (!lang) {

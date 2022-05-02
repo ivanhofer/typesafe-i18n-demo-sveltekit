@@ -1,6 +1,6 @@
 {
 	"name": "typesafe-i18n-demo-sveltekit",
-	"description": "Showcase of typesafe-i18n woking in a SvelteKit project",
+	"description": "Showcase of typesafe-i18n working in a SvelteKit project",
 	"version": "1.0.0",
 	"author": "ivanhofer",
 	"license": "MIT",
@@ -22,25 +22,25 @@
 	},
 	"type": "module",
 	"devDependencies": {
-		"@sveltejs/adapter-vercel": "1.0.0-next.47",
-		"@sveltejs/kit": "1.0.0-next.303",
-		"@typescript-eslint/eslint-plugin": "^5.16.0",
-		"@typescript-eslint/parser": "^5.16.0",
-		"eslint": "^8.12.0",
+		"@sveltejs/adapter-vercel": "1.0.0-next.50",
+		"@sveltejs/kit": "1.0.0-next.324",
+		"@typescript-eslint/eslint-plugin": "^5.22.0",
+		"@typescript-eslint/parser": "^5.22.0",
+		"eslint": "^8.14.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^3.4.1",
 		"node-sass": "^7.0.1",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^2.6.1",
-		"prettier-plugin-svelte": "^2.6.0",
-		"sass": "^1.49.9",
-		"svelte": "^3.46.4",
-		"svelte-check": "^2.4.6",
-		"svelte-preprocess": "^4.10.4",
-		"tslib": "^2.3.1",
-		"typescript": "^4.6.3"
+		"prettier": "^2.6.2",
+		"prettier-plugin-svelte": "^2.7.0",
+		"sass": "^1.51.0",
+		"svelte": "^3.48.0",
+		"svelte-check": "^2.7.0",
+		"svelte-preprocess": "^4.10.6",
+		"tslib": "^2.4.0",
+		"typescript": "^4.6.4"
 	},
 	"dependencies": {
-		"typesafe-i18n": "^5.1.0"
+		"typesafe-i18n": "^5.4.2"
 	}
 }
