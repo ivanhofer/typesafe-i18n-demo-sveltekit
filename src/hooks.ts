@@ -3,8 +3,10 @@ import type { GetSession, Handle } from '@sveltejs/kit'
 import type { RequestEvent } from '@sveltejs/kit/types/private'
 import { initAcceptLanguageHeaderDetector } from 'typesafe-i18n/detectors'
 
-const htmlLanguageAttributeReplacer = (locale: string) =>
-	({ html }) => html.replace('<html lang="en">', `<html lang="${locale}">`)
+const htmlLanguageAttributeReplacer =
+	(locale: string) =>
+	({ html }) =>
+		html.replace('<html lang="en">', `<html lang="${locale}">`)
 
 export const handle: Handle = async ({ event, resolve }) => {
 	// read language slug
@@ -28,7 +30,7 @@ export const getSession: GetSession = (event) => {
 
 const getHeaders = (event: RequestEvent) => {
 	const headers: Record<string, string> = {}
-	event.request.headers.forEach((value, key) => headers[key] = value)
+	event.request.headers.forEach((value, key) => (headers[key] = value))
 
 	return headers
 }
