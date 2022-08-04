@@ -11,9 +11,9 @@
 	},
 	"scripts": {
 		"dev": "npm-run-all --parallel sveltekit typesafe-i18n",
-		"sveltekit": "svelte-kit dev",
-		"build": "svelte-kit build",
-		"preview": "svelte-kit preview",
+		"sveltekit": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
@@ -22,25 +22,26 @@
 	},
 	"type": "module",
 	"devDependencies": {
-		"@sveltejs/adapter-vercel": "1.0.0-next.58",
-		"@sveltejs/kit": "1.0.0-next.348",
-		"@typescript-eslint/eslint-plugin": "^5.27.0",
-		"@typescript-eslint/parser": "^5.27.0",
-		"eslint": "^8.17.0",
+		"@sveltejs/adapter-vercel": "1.0.0-next.66",
+		"@sveltejs/kit": "1.0.0-next.403",
+		"@typescript-eslint/eslint-plugin": "^5.32.0",
+		"@typescript-eslint/parser": "^5.32.0",
+		"eslint": "^8.21.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"node-sass": "^7.0.1",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^2.6.2",
+		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
-		"sass": "^1.52.2",
-		"svelte": "^3.48.0",
-		"svelte-check": "^2.7.2",
+		"sass": "^1.54.2",
+		"svelte": "^3.49.0",
+		"svelte-check": "^2.8.0",
 		"svelte-preprocess": "^4.10.7",
 		"tslib": "^2.4.0",
-		"typescript": "^4.7.3"
+		"typescript": "^4.7.4",
+		"vite": "^3.0.4"
 	},
 	"dependencies": {
-		"typesafe-i18n": "^5.5.1"
+		"typesafe-i18n": "^5.11.0"
 	}
 }

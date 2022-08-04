@@ -1,6 +1,6 @@
 import { detectLocale } from '$i18n/i18n-util'
 import type { GetSession, Handle } from '@sveltejs/kit'
-import type { RequestEvent } from '@sveltejs/kit/types/private'
+import type { RequestEvent } from '@sveltejs/kit'
 import { initAcceptLanguageHeaderDetector } from 'typesafe-i18n/detectors'
 
 const htmlLanguageAttributeReplacer =
@@ -13,7 +13,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const [, lang] = event.url.pathname.split('/')
 
 	// replace html lang attribute with correct language
-	return resolve(event, { transformPage: htmlLanguageAttributeReplacer(lang) })
+	return resolve(event, { transformPageChunk: htmlLanguageAttributeReplacer(lang) })
 }
 
 export const getSession: GetSession = (event) => {
