@@ -25,17 +25,15 @@
 		}
 	}
 
-	if (browser) {
-		// on initial load, add the locale information to the history state
-		const lang = $page.params.lang
-		history.replaceState({ locale: lang }, '', replaceLocaleInUrl(location.pathname, lang))
-	}
-
 	// update locale when navigating via browser back/forward buttons
 	const handlePopStateEvent = async ({ state }: PopStateEvent) => switchLocale(state.locale, false)
 
 	// update locale when page store changes
-	$: switchLocale($page.params.lang as Locales, false)
+	$: if ( browser) {
+		const lang = $page.params.lang as Locales
+		switchLocale(lang, false)
+		history.replaceState({ locale: lang }, '', replaceLocaleInUrl(location.pathname, lang))
+	}
 </script>
 
 <svelte:window on:popstate={handlePopStateEvent} />
