@@ -29,10 +29,10 @@
 	const handlePopStateEvent = async ({ state }: PopStateEvent) => switchLocale(state.locale, false)
 
 	// update locale when page store changes
-	$: if ( browser) {
+	$: if (browser) {
 		const lang = $page.params.lang as Locales
 		switchLocale(lang, false)
-		history.replaceState({ locale: lang }, '', replaceLocaleInUrl(location.pathname, lang))
+		history.replaceState({ ...history.state, locale: lang }, '', replaceLocaleInUrl(location.pathname, lang))
 	}
 </script>
 
