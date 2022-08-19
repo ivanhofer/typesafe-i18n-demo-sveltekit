@@ -21,6 +21,9 @@
 		"typesafe-i18n": "typesafe-i18n"
 	},
 	"type": "module",
+	"engines": {
+		"node": ">=16.9"
+	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "1.0.0-next.66",
 		"@sveltejs/kit": "1.0.0-next.423",
