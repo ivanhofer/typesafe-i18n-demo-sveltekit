@@ -6,10 +6,4 @@ declare namespace App {
 	// interface Locals { }
 
 	// interface Platform { }
-
-	interface Session {
-		locale: Locales
-	}
-
-	// interface Stuff { }
 }
