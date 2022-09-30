@@ -16,18 +16,18 @@ export type Translations = RootTranslation
 
 type RootTranslation = {
 	/**
-	 * Welcome to Svelte Fall Summit {year}
+	 * W​e​l​c​o​m​e​ ​t​o​ ​S​v​e​l​t​e​ ​F​a​l​l​ ​S​u​m​m​i​t​ ​{​y​e​a​r​}
 	 * @param {number} year
 	 */
 	HI: RequiredParams<'year'>
 	/**
-	 * {0} live spectator{{s}}
+	 * {​0​}​ ​l​i​v​e​ ​s​p​e​c​t​a​t​o​r​{​{​s​}​}
 	 * @param {string | number | boolean} 0
 	 */
 	spectators: RequiredParams<'0'>
 	summit: {
 		/**
-		 * {0|simpleDate}
+		 * {​0​|​s​i​m​p​l​e​D​a​t​e​}
 		 * @param {Date} 0
 		 */
 		schedule: RequiredParams<'0|simpleDate'>

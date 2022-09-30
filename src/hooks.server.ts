@@ -19,18 +19,10 @@ export const handle: Handle = async ({ event, resolve }) => {
 	return resolve(event, { transformPageChunk: ({ html }) => html.replace('%lang%', lang) })
 }
 
-const getPreferredLocale = (event: RequestEvent) => {
+const getPreferredLocale = ({ request }: RequestEvent) => {
 	// detect the preferred language the user has configured in his browser
 	// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language
-	const headers = transformHeaders(event)
-	const acceptLanguageDetector = initAcceptLanguageHeaderDetector({ headers })
+	const acceptLanguageDetector = initAcceptLanguageHeaderDetector(request)
 
 	return detectLocale(acceptLanguageDetector)
-}
-
-const transformHeaders = ({ request }: RequestEvent) => {
-	const headers: Record<string, string> = {}
-	request.headers.forEach((value, key) => (headers[key] = value))
-
-	return headers
 }
