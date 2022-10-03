@@ -2,6 +2,8 @@
 	import LL from '$i18n/i18n-svelte'
 	import { onMount } from 'svelte'
 
+	console.info($LL.log({ fileName: '+page.svelte' }))
+
 	let spectators = 0
 
 	onMount(() => {
