@@ -6,6 +6,7 @@ const en: BaseTranslation = {
 	summit: {
 		schedule: '{0:Date|simpleDate}',
 	},
+	log: `This log was called from '{fileName:string}'`
 }
 
 export default en

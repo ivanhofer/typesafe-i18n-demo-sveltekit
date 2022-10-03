@@ -6,6 +6,7 @@ const it: Translation = {
 	summit: {
 		schedule: '{0|simpleDate}',
 	},
+	log: `Questa protocollazione è stata chiamata da '{fileName}'`
 }
 
 export default it

@@ -6,6 +6,7 @@ const de: Translation = {
 	summit: {
 		schedule: '{0|simpleDate}',
 	},
+	log: `Dieses Logging wurde von '{fileName}' aufgerufen`
 }
 
 export default de

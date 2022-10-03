@@ -1,19 +1,20 @@
-import { redirect } from '@sveltejs/kit';
 import type { LayoutLoad } from './$types'
 import type { Locales } from '$i18n/i18n-types'
-import { replaceLocaleInUrl } from '../utils'
-import { baseLocale, locales } from '$i18n/i18n-util'
 import { loadLocaleAsync } from '$i18n/i18n-util.async'
+import LL, { setLocale } from '$i18n/i18n-svelte'
+import { get } from 'svelte/store'
 
-export const load: LayoutLoad<{ locale: Locales }> = async ({ url, params }) => {
-	const lang = params.lang as Locales
+export const load: LayoutLoad<{ locale: Locales }> = async ({ data: { locale } }) => {
+	// load dictionary into memory
+	await loadLocaleAsync(locale)
 
-	// redirect to base locale if language is not present
-	if (!locales.includes(lang)) {
-		throw redirect(302, replaceLocaleInUrl(url.pathname, baseLocale));
-	}
+	// if you need to output a localized string in a `load` function,
+	// you always need to call `setLocale` right before you access the `LL` store
+	setLocale(locale)
+	// get the translation functions value from the store
+	const $LL = get(LL)
+	console.info($LL.log({ fileName: '+layout.ts' }))
 
-	await loadLocaleAsync(lang)
-
-	return { locale: lang }
+	// pass locale to the "rendering context"
+	return { locale }
 }

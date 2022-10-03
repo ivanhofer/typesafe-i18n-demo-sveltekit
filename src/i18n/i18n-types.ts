@@ -32,6 +32,11 @@ type RootTranslation = {
 		 */
 		schedule: RequiredParams<'0|simpleDate'>
 	}
+	/**
+	 * T​h​i​s​ ​l​o​g​ ​w​a​s​ ​c​a​l​l​e​d​ ​f​r​o​m​ ​'​{​f​i​l​e​N​a​m​e​}​'
+	 * @param {string} fileName
+	 */
+	log: RequiredParams<'fileName'>
 }
 
 export type TranslationFunctions = {
@@ -49,6 +54,10 @@ export type TranslationFunctions = {
 		 */
 		schedule: (arg0: Date) => LocalizedString
 	}
+	/**
+	 * This log was called from '{fileName}'
+	 */
+	log: (arg: { fileName: string }) => LocalizedString
 }
 
 export type Formatters = {
