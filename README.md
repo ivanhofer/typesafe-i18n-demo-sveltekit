@@ -1,6 +1,6 @@
 # typesafe-i18n demo sveltekit
 
-**Here is a [video](https://www.youtube.com/watch?v=C6O5pMMMTG0) for better context**
+**Here is a [video](https://www.youtube.com/watch?v=C6O5pMMMTG0) for better context.** _SvelteKit has undergone some major changes since this video was published. For the most up-to-date way of handling i18n, please refer to the code in this repository._
 
 This example demonstrates a [`typesafe-i18n`](https://github.com/ivanhofer/typesafe-i18n)-integration with [SvelteKit](https://kit.svelte.dev/).
 
