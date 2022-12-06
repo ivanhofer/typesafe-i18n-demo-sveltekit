@@ -26,10 +26,10 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "1.0.0-next.84",
-		"@sveltejs/kit": "1.0.0-next.505",
-		"@typescript-eslint/eslint-plugin": "^5.44.0",
-		"@typescript-eslint/parser": "^5.44.0",
-		"eslint": "^8.28.0",
+		"@sveltejs/kit": "1.0.0-next.572",
+		"@typescript-eslint/eslint-plugin": "^5.45.1",
+		"@typescript-eslint/parser": "^5.45.1",
+		"eslint": "^8.29.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"node-sass": "^8.0.0",
@@ -38,13 +38,13 @@
 		"prettier-plugin-svelte": "^2.8.1",
 		"sass": "^1.56.1",
 		"svelte": "^3.53.1",
-		"svelte-check": "^2.9.2",
+		"svelte-check": "^2.10.1",
 		"svelte-preprocess": "^4.10.7",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.3",
-		"vite": "^3.2.4"
+		"vite": "^3.2.5"
 	},
 	"dependencies": {
-		"typesafe-i18n": "^5.17.0"
+		"typesafe-i18n": "^5.17.1"
 	}
 }
