@@ -21,7 +21,7 @@
 
 		if (updateHistoryState) {
 			// update url to reflect locale changes
-			history.pushState({ locale: newLocale }, '', replaceLocaleInUrl(location.pathname, newLocale))
+			history.pushState({ locale: newLocale }, '', replaceLocaleInUrl(location, newLocale))
 		}
 	}
 
@@ -32,7 +32,7 @@
 	$: if (browser) {
 		const lang = $page.params.lang as Locales
 		switchLocale(lang, false)
-		history.replaceState({ ...history.state, locale: lang }, '', replaceLocaleInUrl(location.pathname, lang))
+		history.replaceState({ ...history.state, locale: lang }, '', replaceLocaleInUrl(location, lang))
 	}
 </script>
 
