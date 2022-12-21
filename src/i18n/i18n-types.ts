@@ -16,6 +16,10 @@ export type Translations = RootTranslation
 
 type RootTranslation = {
 	/**
+	 * t​y​p​e​s​a​f​e​-​i​1​8​n​ ​-​ ​S​v​e​l​t​e​ ​F​a​l​l​ ​S​u​m​m​i​t​ ​2​0​2​1
+	 */
+	title: string
+	/**
 	 * W​e​l​c​o​m​e​ ​t​o​ ​S​v​e​l​t​e​ ​F​a​l​l​ ​S​u​m​m​i​t​ ​{​y​e​a​r​}
 	 * @param {number} year
 	 */
@@ -40,6 +44,10 @@ type RootTranslation = {
 }
 
 export type TranslationFunctions = {
+	/**
+	 * typesafe-i18n - Svelte Fall Summit 2021
+	 */
+	title: () => LocalizedString
 	/**
 	 * Welcome to Svelte Fall Summit {year}
 	 */

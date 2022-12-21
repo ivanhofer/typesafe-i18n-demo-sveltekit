@@ -1,6 +1,7 @@
 <script lang="ts">
-	import Header from '$lib/Header.svelte'
+	import { page } from '$app/stores'
 	import LL, { setLocale } from '$i18n/i18n-svelte'
+	import Header from '$lib/Header.svelte'
 	import type { LayoutData } from './$types'
 
 	export let data: LayoutData
@@ -19,3 +20,7 @@
 <style lang="scss" global>
 	@import '../styles/global.scss';
 </style>
+
+<svelte:head>
+	<title>{$page.data.title || 'typesafe-i18n'}</title>
+</svelte:head>
