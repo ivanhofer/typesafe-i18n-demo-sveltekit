@@ -7,18 +7,19 @@
 	let spectators = 0
 
 	onMount(() => {
-		const interval = setInterval(updateSpectatorCount, 2_000)
+		const interval = setInterval(async () => {
+			spectators = await updateSpectatorCount(spectators)
+		}, 2_000)
 
 		return () => clearInterval(interval)
 	})
 
-	const updateSpectatorCount = () => {
-		// no real data, just a simulation ;)
-		spectators = spectators * 2 + 1
-
-		if (spectators > 100_000) {
-			spectators = 0
-		}
+	const updateSpectatorCount = async (spectators: number) => {
+		const response = await fetch(
+			'/api/spectators?' + new URLSearchParams({ oldSpectators: spectators.toString() }).toString()
+		)
+		let result = await response.json()
+		return result.spectators
 	}
 
 	const day = new Date('2021-11-20')
