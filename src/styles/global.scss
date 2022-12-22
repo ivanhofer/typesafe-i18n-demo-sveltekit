@@ -28,8 +28,9 @@ header {
 		display: flex;
 		gap: 0.5rem;
 
-		li > button {
+		li > a {
 			all: initial;
+			cursor: pointer;
 			padding: 0.5rem;
 			color: #444;
 
