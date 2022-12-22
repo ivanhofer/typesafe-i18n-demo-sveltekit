@@ -18,7 +18,7 @@
 		const response = await fetch(
 			'/api/spectators?' + new URLSearchParams({ oldSpectators: spectators.toString() }).toString()
 		)
-		let result = await response.json()
+		const result = await response.json()
 		return result.spectators
 	}
 
