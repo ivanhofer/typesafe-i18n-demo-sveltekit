@@ -21,7 +21,7 @@
 
 		if (updateHistoryState) {
 			// update url to reflect locale changes
-			history.pushState({ locale: newLocale }, '', replaceLocaleInUrl(location, newLocale))
+			history.pushState({ locale: newLocale }, '', replaceLocaleInUrl($page.url, newLocale))
 		}
 	}
 
@@ -32,7 +32,7 @@
 	$: if (browser) {
 		const lang = $page.params.lang as Locales
 		switchLocale(lang, false)
-		history.replaceState({ ...history.state, locale: lang }, '', replaceLocaleInUrl(location, lang))
+		history.replaceState({ ...history.state, locale: lang }, '', replaceLocaleInUrl($page.url, lang))
 	}
 </script>
 
@@ -41,9 +41,9 @@
 <ul>
 	{#each locales as l}
 		<li>
-			<button type="button" class:active={l === $locale} on:click={() => switchLocale(l)}>
+			<a class:active={l === $locale} href={`${replaceLocaleInUrl($page.url, l)}`}>
 				{l}
-			</button>
+			</a>
 		</li>
 	{/each}
 </ul>
