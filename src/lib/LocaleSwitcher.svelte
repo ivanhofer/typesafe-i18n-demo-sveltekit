@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment'
+    import { invalidateAll } from '$app/navigation'
 	import { page } from '$app/stores'
 	import { setLocale, locale } from '$i18n/i18n-svelte'
 	import type { Locales } from '$i18n/i18n-types'
@@ -23,6 +24,9 @@
 			// update url to reflect locale changes
 			history.pushState({ locale: newLocale }, '', replaceLocaleInUrl($page.url, newLocale))
 		}
+
+		// run the `load` function again
+		invalidateAll()
 	}
 
 	// update locale when navigating via browser back/forward buttons
