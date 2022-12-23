@@ -10,17 +10,18 @@ export const handle: Handle = async ({ event, resolve }) => {
 	// read language slug
 	const [, lang] = event.url.pathname.split('/')
 
-	// redirect to base locale if no locale slug was found or if locale is not supported
-	if (!lang || !isLocale(lang)) {
+	// redirect to base locale if no locale slug was found
+	if (!lang) {
 		const locale = getPreferredLocale(event)
 
 		return new Response(null, {
 			status: 302,
-			headers: { 'Location': `/${locale}` }
+			headers: { Location: `/${locale}` },
 		})
 	}
 
-	const locale = lang as Locales
+	// if slug is not a locale, use base locale (e.g. api endpoints)
+	const locale = isLocale(lang) ? (lang as Locales) : getPreferredLocale(event)
 	const LL = L[locale]
 
 	// bind locale and translation functions to current request
