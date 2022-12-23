@@ -5,5 +5,5 @@
 </script>
 
 {#each locales as l}
-	<link rel="alternate" hreflang={l} href={`${replaceLocaleInUrl($page.url, l)}`} />
+	<link rel="alternate" hreflang={l} href={`${replaceLocaleInUrl($page.url, l, true)}`} />
 {/each}
