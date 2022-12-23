@@ -12,13 +12,12 @@
 		return () => clearInterval(interval)
 	})
 
-	const updateSpectatorCount = () => {
-		// no real data, just a simulation ;)
-		spectators = spectators * 2 + 1
-
-		if (spectators > 100_000) {
-			spectators = 0
-		}
+	const updateSpectatorCount = async () => {
+		const response = await fetch(
+			'/api/spectators?' + new URLSearchParams({ oldSpectators: spectators.toString() }).toString()
+		)
+		const result = await response.json()
+		spectators = result.spectators
 	}
 
 	const day = new Date('2021-11-20')
