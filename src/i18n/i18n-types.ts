@@ -16,10 +16,15 @@ export type Translations = RootTranslation
 
 type RootTranslation = {
 	/**
+	 * t​y​p​e​s​a​f​e​-​i​1​8​n​ ​-​ ​S​v​e​l​t​e​ ​F​a​l​l​ ​S​u​m​m​i​t​ ​{​y​e​a​r​}
+	 * @param {number} year
+	 */
+	title: RequiredParams<'year'>
+	/**
 	 * W​e​l​c​o​m​e​ ​t​o​ ​S​v​e​l​t​e​ ​F​a​l​l​ ​S​u​m​m​i​t​ ​{​y​e​a​r​}
 	 * @param {number} year
 	 */
-	HI: RequiredParams<'year'>
+	welcome: RequiredParams<'year'>
 	/**
 	 * {​0​}​ ​l​i​v​e​ ​s​p​e​c​t​a​t​o​r​{​{​s​}​}
 	 * @param {string | number | boolean} 0
@@ -41,9 +46,13 @@ type RootTranslation = {
 
 export type TranslationFunctions = {
 	/**
+	 * typesafe-i18n - Svelte Fall Summit {year}
+	 */
+	title: (arg: { year: number }) => LocalizedString
+	/**
 	 * Welcome to Svelte Fall Summit {year}
 	 */
-	HI: (arg: { year: number }) => LocalizedString
+	welcome: (arg: { year: number }) => LocalizedString
 	/**
 	 * {0} live spectator{{s}}
 	 */

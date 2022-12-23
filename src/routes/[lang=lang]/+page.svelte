@@ -24,7 +24,7 @@
 </script>
 
 <h2>
-	{$LL.HI({ year: 2021 })}
+	{$LL.welcome({ year: 2021 })}
 </h2>
 
 <h3>
