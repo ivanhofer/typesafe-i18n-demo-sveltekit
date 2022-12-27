@@ -2,6 +2,7 @@
 	import { page } from '$app/stores'
 	import LL, { setLocale } from '$i18n/i18n-svelte'
 	import Header from '$lib/Header.svelte'
+	import HeadHrefLangs from '$lib/HeadHrefLangs.svelte'
 	import type { LayoutData } from './$types'
 
 	export let data: LayoutData
@@ -23,4 +24,5 @@
 
 <svelte:head>
 	<title>{$page.data.title || 'typesafe-i18n'}</title>
+	<HeadHrefLangs />
 </svelte:head>
