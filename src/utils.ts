@@ -11,6 +11,7 @@ export const replaceLocaleInUrl = (url: URL, locale: string, full = false): stri
 	if (!full) {
 		return `${new_pathname}${url.search}`
 	}
-	url.pathname = new_pathname
-	return url.toString()
+	const newUrl = new URL(url.toString())
+	newUrl.pathname = new_pathname
+	return newUrl.toString()
 }
