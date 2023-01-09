@@ -31,7 +31,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	console.info(LL.log({ fileName: 'hooks.server.ts' }))
 
 	// replace html lang attribute with correct language
-	return resolve(event, { transformPageChunk: ({ html }) => html.replace('%lang%', lang) })
+	return resolve(event, { transformPageChunk: ({ html }) => html.replace('%lang%', locale) })
 }
 
 const getPreferredLocale = ({ request }: RequestEvent) => {
