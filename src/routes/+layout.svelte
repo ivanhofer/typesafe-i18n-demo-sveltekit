@@ -18,11 +18,11 @@
 	<slot />
 </main>
 
-<style lang="scss" global>
-	@import '../styles/global.scss';
-</style>
-
 <svelte:head>
 	<title>{$page.data.title || 'typesafe-i18n'}</title>
 	<HeadHrefLangs />
 </svelte:head>
+
+<style lang="scss" global>
+	@import '../styles/global.scss';
+</style>

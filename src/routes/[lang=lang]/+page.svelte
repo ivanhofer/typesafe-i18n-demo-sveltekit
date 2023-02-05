@@ -14,7 +14,7 @@
 
 	const updateSpectatorCount = async () => {
 		const response = await fetch(
-			'/api/spectators?' + new URLSearchParams({ oldSpectators: spectators.toString() }).toString()
+			'/api/spectators?' + new URLSearchParams({ oldSpectators: spectators.toString() }).toString(),
 		)
 		const result = await response.json()
 		spectators = result.spectators
