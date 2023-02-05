@@ -5,7 +5,10 @@ import type { BaseTranslation as BaseTranslationType, LocalizedString, RequiredP
 export type BaseTranslation = BaseTranslationType
 export type BaseLocale = 'en'
 
-export type Locales = 'de' | 'en' | 'it'
+export type Locales =
+	| 'de'
+	| 'en'
+	| 'it'
 
 export type Translation = RootTranslation
 
