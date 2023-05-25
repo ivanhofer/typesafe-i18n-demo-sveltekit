@@ -17,9 +17,6 @@
 		// select locale
 		setLocale(newLocale)
 
-		// update `lang` attribute
-		document.querySelector('html').setAttribute('lang', newLocale)
-
 		if (updateHistoryState) {
 			// update url to reflect locale changes
 			history.pushState({ locale: newLocale }, '', replaceLocaleInUrl($page.url, newLocale))
@@ -28,6 +25,9 @@
 		// run the `load` function again
 		invalidateAll()
 	}
+
+	// update `lang` attribute
+	$: browser && document.querySelector('html').setAttribute('lang', $locale)
 
 	// update locale when navigating via browser back/forward buttons
 	const handlePopStateEvent = async ({ state }: PopStateEvent) => switchLocale(state.locale, false)
