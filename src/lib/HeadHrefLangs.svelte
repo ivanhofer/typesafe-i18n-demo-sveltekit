@@ -5,6 +5,6 @@
 </script>
 
 {#each locales as l}
-	<link rel="alternate" hreflang={l} href={`${replaceLocaleInUrl($page.url, l, true)}`} />
+	<link rel="alternate" hreflang={l} href={replaceLocaleInUrl($page.url, l, true)} />
 {/each}
-<link rel="alternate" hreflang="x-default" href={`${replaceLocaleInUrl($page.url, baseLocale, true)}`} />
+<link rel="alternate" hreflang="x-default" href={replaceLocaleInUrl($page.url, baseLocale, true)} />

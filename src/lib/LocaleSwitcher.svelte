@@ -6,7 +6,7 @@
 	import type { Locales } from '$i18n/i18n-types'
 	import { locales } from '$i18n/i18n-util'
 	import { loadLocaleAsync } from '$i18n/i18n-util.async'
-	import { replaceLocaleInUrl } from '../utils'
+	import { replaceLocaleInUrl } from '../utils.js'
 
 	const switchLocale = async (newLocale: Locales, updateHistoryState = true) => {
 		if (!newLocale || $locale === newLocale) return
@@ -27,7 +27,7 @@
 	}
 
 	// update `lang` attribute
-	$: browser && document.querySelector('html').setAttribute('lang', $locale)
+	$: browser && document.querySelector('html')!.setAttribute('lang', $locale)
 
 	// update locale when navigating via browser back/forward buttons
 	const handlePopStateEvent = async ({ state }: PopStateEvent) => switchLocale(state.locale, false)
@@ -45,7 +45,7 @@
 <ul>
 	{#each locales as l}
 		<li>
-			<a class:active={l === $locale} href={`${replaceLocaleInUrl($page.url, l)}`}>
+			<a class:active={l === $locale} href={replaceLocaleInUrl($page.url, l)}>
 				{l}
 			</a>
 		</li>

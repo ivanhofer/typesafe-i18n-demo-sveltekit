@@ -19,7 +19,7 @@ header {
 	padding: 1rem 2rem;
 	font-family: monospace;
 
-	> a {
+	>a {
 		text-decoration: none;
 	}
 
@@ -28,7 +28,7 @@ header {
 		display: flex;
 		gap: 0.5rem;
 
-		li > a {
+		li>a {
 			all: initial;
 			cursor: pointer;
 			padding: 0.5rem;
