@@ -1,10 +1,5 @@
 lockfileVersion: '6.0'
 
-dependencies:
-  typesafe-i18n:
-    specifier: ^5.24.3
-    version: 5.24.3(typescript@5.1.6)
-
 devDependencies:
   '@sveltejs/adapter-auto':
     specifier: ^2.1.0
@@ -27,6 +22,9 @@ devDependencies:
   tslib:
     specifier: ^2.6.0
     version: 2.6.0
+  typesafe-i18n:
+    specifier: ^5.24.3
+    version: 5.24.3(typescript@5.1.6)
   typescript:
     specifier: ^5.1.6
     version: 5.1.6
@@ -1644,12 +1642,13 @@ packages:
       typescript: '>=3.5.1'
     dependencies:
       typescript: 5.1.6
-    dev: false
+    dev: true
 
   /typescript@5.1.6:
     resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
     engines: {node: '>=14.17'}
     hasBin: true
+    dev: true
 
   /unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}

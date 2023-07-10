@@ -1,7 +1,14 @@
 {
 	"name": "typesafe-i18n-demo-sveltekit",
-	"version": "0.0.1",
-	"private": true,
+	"description": "Showcase of typesafe-i18n working in a SvelteKit project",
+	"version": "1.0.0",
+	"author": "ivanhofer",
+	"license": "MIT",
+	"homepage": "https://github.com/ivanhofer/typesafe-i18n-demo-sveltekit",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ivanhofer/typesafe-i18n-demo-sveltekit"
+	},
 	"scripts": {
 		"dev": "npm-run-all --parallel vite typesafe-i18n",
 		"vite": "vite dev",
@@ -19,11 +26,9 @@
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.5",
 		"tslib": "^2.6.0",
+		"typesafe-i18n": "^5.24.3",
 		"typescript": "^5.1.6",
 		"vite": "^4.4.2"
 	},
-	"type": "module",
-	"dependencies": {
-		"typesafe-i18n": "^5.24.3"
-	}
+	"type": "module"
 }
