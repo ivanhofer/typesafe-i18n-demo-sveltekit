@@ -3,7 +3,8 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "npm-run-all --parallel vite typesafe-i18n",
+		"vite": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -13,6 +14,8 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/kit": "^1.22.1",
+		"npm-run-all": "^4.1.5",
+		"sass": "^1.63.6",
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.5",
 		"tslib": "^2.6.0",

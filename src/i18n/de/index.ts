@@ -1,8 +1,13 @@
 import type { Translation } from '../i18n-types'
 
 const de = {
-	// this is an example Translation, just rename or delete this folder if you want
-	HI: 'Hallo {name}! Bitte hinterlasse einen Stern, wenn dir das Projekt gefällt: https://github.com/ivanhofer/typesafe-i18n',
+	title: 'typesafe-i18n - Svelte Herbst Summit {year}',
+	welcome: 'Willkommen zum Svelte Herbst Summit {year}',
+	spectators: '{0} Zuschauer live',
+	summit: {
+		schedule: '{0|simpleDate}',
+	},
+	log: `Dieses Logging wurde von '{fileName}' aufgerufen`,
 } satisfies Translation
 
 export default de
