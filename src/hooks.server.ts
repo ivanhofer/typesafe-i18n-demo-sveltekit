@@ -11,7 +11,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const [, lang] = event.url.pathname.split('/')
 
 	// redirect to base locale if no locale slug was found
-	if (!lang) {
+	if (!isLocale(lang)) {
 		const locale = getPreferredLocale(event)
 
 		return new Response(null, {
