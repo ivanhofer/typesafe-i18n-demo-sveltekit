@@ -4,8 +4,8 @@
 
 This example demonstrates a [`typesafe-i18n`](https://github.com/ivanhofer/typesafe-i18n)-integration with [SvelteKit](https://kit.svelte.dev/).
 
-[!IMPORTANT]  
-Make sure you adopt `app.d.ts` for full TypeScript type inference. More context [here]([url](https://github.com/ivanhofer/typesafe-i18n/discussions/717#discussioncomment-6640503))
+> [!WARNING]
+> Make sure you adopt `app.d.ts` for full TypeScript type inference. More context [here]([url](https://github.com/ivanhofer/typesafe-i18n/discussions/717#discussioncomment-6640503))
 
 ### LIVE-DEMO: https://typesafe-i18n-demo-sveltekit.vercel.app
 
